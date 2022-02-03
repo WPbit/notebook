@@ -11,11 +11,11 @@ class Add extends Controller
     {
         if (!empty($_POST['name']) && !empty($_POST['email'])) {
 
-            $name = $_POST['name'];
-            $email = $_POST['email'];
+            $name = htmlspecialchars($_POST['name']);
+            $email = htmlspecialchars($_POST['email']);
 
             if (isset($_POST['text'])) {
-                $text = $_POST['text'];
+                $text = htmlspecialchars($_POST['text']);
             } else {
                 $text = 'no any notes';
             }

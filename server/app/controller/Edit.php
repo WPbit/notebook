@@ -22,16 +22,9 @@ class Edit extends Controller
 
             if (!empty($_POST['id']) && !empty($_POST['text'])) {
 
-                $id = $_POST['id'];
-                $text = $_POST['text'];
+                $edited = !empty($_POST['edited']) ? $_POST['edited'] : 0;
 
-                if (!empty($_POST['edited']) && $_POST['edited'] == 1) {
-                    $edited = $_POST['edited'];
-                } else {
-                    $edited = 0;
-                }
-
-                $records->editRecord($id, $text, $edited);
+                $records->editRecord($_POST['id'], htmlspecialchars($_POST['text']), $edited);
 
                 $_SESSION['alerts'] = ['success' => 'Изменения сохранены'];
 
