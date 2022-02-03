@@ -26,7 +26,13 @@ class Record
             $order_by = null;
         }
 
-        $sql = 'SELECT name, email, text, admin_edit FROM records ' . $order_by . 'LIMIT ' . $pagination['itemStart'] . ', ' . $pagination['itemEnd'];
+        $sql = 'SELECT id, name, email, text, admin_edit FROM records ' . $order_by . 'LIMIT ' . $pagination['itemStart'] . ', ' . $pagination['itemEnd'];
+        return $this->pdo->getDbResult($sql);
+    }
+
+    public function getOneRecord($id)
+    {
+        $sql = 'SELECT id, name, email, text, admin_edit FROM records WHERE id = ' . $id;
         return $this->pdo->getDbResult($sql);
     }
 
@@ -36,6 +42,12 @@ class Record
         $this->pdo->getDbResult($sql);
 
         return true;
+    }
+
+    public function editRecord($id, $text, $edited)
+    {
+        $sql = "UPDATE records SET text = '$text', admin_edit = '$edited' WHERE id = '$id'";
+        $this->pdo->getDbResult($sql);
     }
 
 }

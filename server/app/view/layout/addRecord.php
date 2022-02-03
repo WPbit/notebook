@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
 
     <h1 class="h4 text-center"><?= $h1 ?></h1>
 
@@ -16,11 +16,13 @@
                     <input type="email" name="email" class="form-control" id="inputEmail" required>
                 </div>
                 <div class="form-group">
-                    <label for="inputText" class="small">Текст заметки</label>
+                    <label for="inputText" class="small">Текст задачи</label>
                     <textarea name="text" class="form-control" id="inputText"></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-info mt-3">Сохранить</button>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-info mt-3">Сохранить</button>
+                </div>
             </form>
 
         </div>

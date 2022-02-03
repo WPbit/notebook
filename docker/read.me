@@ -17,8 +17,6 @@ mysql:
 
     if UTF-8 problem (SQL: Incorrect-string-value)
       mysql> ALTER TABLE `wpbit_mysql`.`books` CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
-      mysql> SET NAMES 'utf8';
-      mysql> SET CHARACTER SET utf8;
 
 docker bash:
     docker exec -it notebook_php /bin/bash

@@ -23,7 +23,9 @@ class Add extends Controller
             $records = new Record();
             $records->addNewRecord($name, $email, $text);
 
-            header('location: /');
+            $_SESSION['alerts'] = ['success' => 'Вы успешно добавили заметку'];
+
+            header('location: ' . START_PAGE);
         }
 
         $title = 'Добавление задачи';

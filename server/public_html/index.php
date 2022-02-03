@@ -23,6 +23,9 @@ $uri = $_SERVER['REQUEST_URI'];
 // Routes
 $routes[''] = ['controller' => 'main', 'action' => 'recordsList'];
 $routes['add'] = ['controller' => 'add', 'action' => 'addRecord'];
+$routes['login'] = ['controller' => 'login', 'action' => 'login'];
+$routes['logout'] = ['controller' => 'login', 'action' => 'logout'];
+$routes['edit'] = ['controller' => 'edit', 'action' => 'editNote'];
 
 
 // Get Route

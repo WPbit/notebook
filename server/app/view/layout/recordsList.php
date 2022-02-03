@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
 
     <h1 class="h4 text-center"><?= $h1 ?></h1>
 
@@ -47,6 +47,14 @@
                 <p><b>Имя:</b> <?= $values['name']; ?><br>
                 <b>Email:</b> <?= $values['email']; ?></p>
                 <p><b>Заметка:</b> <?= $values['text']; ?></p>
+                <?php if ($values['admin_edit'] == 1): ?>
+                    <p class="text-center text-muted small">(Отредактировано администратором)</p>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['login']) && $_SESSION['login'] == true): ?>
+                <p class="text-center">
+                    <a class="text-info small" href="edit?rec=<?= $values['id'] ?>">Редактировать</a>
+                </p>
+                <?php endif; ?>
             </div>
         </div>
         <?php endforeach; ?>
